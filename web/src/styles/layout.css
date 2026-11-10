@@ -92,8 +92,11 @@
 }
 @media (max-width: 900px) {
   /* Phone-first: canvas leads, everything else stacks under it. */
-  .cols { display: flex; flex-direction: column; }
-  .col-main  { order: 1; }
+  /* align-items: stretch overrides the desktop grid's `start`. In a column flex
+     `start` shrink-wraps every child to its content, and the canvas has no
+     intrinsic width, so .col-main (and the stage inside it) collapsed. */
+  .cols { display: flex; flex-direction: column; align-items: stretch; }
+  .col-main  { order: 1; width: 100%; }
   .col-right { order: 2; }
   .col-left  { order: 3; }
   .appbar-brand { display: none; }

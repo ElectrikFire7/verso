@@ -10,7 +10,7 @@ function blockReason(s: ViewState): string {
   const seated = s.players.filter((p) => p.connected).length;
   if (seated < LIMITS.minPlayers) {
     const need = LIMITS.minPlayers - seated;
-    return `Waiting for ${need} more player${need === 1 ? "" : "s"} — a match needs at least ${LIMITS.minPlayers}.`;
+    return `Waiting for ${need} more player${need === 1 ? "" : "s"}. A match needs at least ${LIMITS.minPlayers}.`;
   }
   const notReady = s.players.filter((p) => p.connected && !p.ready && !p.isHost);
   if (notReady.length > 0) {
@@ -75,7 +75,7 @@ export function mount(root: HTMLElement, ctx: ScreenCtx): void {
     { class: "card" },
     el("div", { class: "card-title", text: "Invite your friends" }),
     codeBox,
-    el("p", { class: "hint", style: "text-align:center", text: "Read the code out — or send the link." }),
+    el("p", { class: "hint", style: "text-align:center", text: "Read the code out or send the link." }),
     el("div", { style: "height:.6rem" }),
     urlBox,
     el("div", { style: "height:.6rem" }),
@@ -94,7 +94,7 @@ export function mount(root: HTMLElement, ctx: ScreenCtx): void {
 
   const note = el("p", {
     class: "note",
-    text: "No voice or text chat in here. Get everyone onto a call first — the whole game is the argument.",
+    text: "No voice or text chat in here. Get everyone onto a call first. The whole game is the argument.",
   });
 
   const main = el("div", { class: "col-main" }, share, controls, note);
@@ -112,7 +112,7 @@ export function mount(root: HTMLElement, ctx: ScreenCtx): void {
 
     const me = s.players.find((p) => p.id === s.selfId);
     const ready = me?.ready ?? false;
-    setText(readyBtn, ready ? "Ready — tap to unready" : "I'm ready");
+    setText(readyBtn, ready ? "Ready : tap to unready" : "I'm ready");
     readyBtn.className = ready ? "btn btn-good btn-block" : "btn btn-block";
     readyBtn.setAttribute("aria-pressed", String(ready));
 

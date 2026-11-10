@@ -138,7 +138,7 @@ export function mount(root: HTMLElement, ctx: ScreenCtx): void {
   dd.on(create, "click", () => {
     if (create.disabled) return;
     const n = name.value.trim();
-    if (!n) return fail("Type a name first — the others need to know who you are.", name);
+    if (!n) return fail("Type a name first. The others need to know who you are.", name);
     err.hidden = true;
     rememberName(n);
     ctx.actions.createRoom(n, chosen);
@@ -146,7 +146,7 @@ export function mount(root: HTMLElement, ctx: ScreenCtx): void {
 
   const submitJoin = () => {
     const n = name.value.trim();
-    if (!n) return fail("Type a name first — the others need to know who you are.", name);
+    if (!n) return fail("Type a name first. The others need to know who you are.", name);
     const c = parseRoomCode(code.value);
     if (c.length !== LIMITS.codeLength) {
       return fail(`A room code is ${LIMITS.codeLength} characters. You can paste the whole link instead.`, code);
@@ -200,7 +200,7 @@ export function mount(root: HTMLElement, ctx: ScreenCtx): void {
       el(
         "ol",
         { class: "how" },
-        el("li", { text: "Everyone gets a secret word. One player's word is different — and nobody is told who." }),
+        el("li", { text: "Everyone gets a secret word. One player's word is different and nobody is told who." }),
         el("li", { text: "Take turns adding a quick freehand clue to one shared canvas. No letters, no erasing." }),
         el("li", { text: "Talk it over, then vote in secret. Whoever has the most votes is eliminated; a tie is safe." }),
         el("li", { text: "The group wins by eliminating the imposter. The imposter wins by surviving." }),

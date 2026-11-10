@@ -146,7 +146,7 @@ export function mount(root: HTMLElement, ctx: ScreenCtx): void {
     shown = round;
     ctx.canvas.paintRound(round, promoted);
     const pair = pairFor(s, round);
-    setText(stageCaption, pair === "" ? `Round ${round}` : `Round ${round} — ${pair}`);
+    setText(stageCaption, pair === "" ? `Round ${round}` : `Round ${round} - ${pair}`);
     stageBox.setAttribute("aria-label", `The canvas from round ${round}`);
     setSaveLabel();
     for (const btn of strip.querySelectorAll<HTMLButtonElement>("[data-round]")) {
@@ -224,7 +224,7 @@ export function mount(root: HTMLElement, ctx: ScreenCtx): void {
       words,
       el("div", {
         class: "card-title",
-        text: m.rounds.length > 1 ? `The pairs — one per round` : "The pair",
+        text: m.rounds.length > 1 ? `The pairs - one per round` : "The pair",
       }),
       ...m.rounds.map((rw) =>
         el(
@@ -300,7 +300,7 @@ export function mount(root: HTMLElement, ctx: ScreenCtx): void {
             el("div", {
               class: "pitem-sub",
               text: r.wasImposter
-                ? r.eliminated ? "imposter — caught" : "imposter"
+                ? r.eliminated ? "imposter caught" : "imposter"
                 : r.eliminated ? "eliminated" : "survived",
             }),
           ),

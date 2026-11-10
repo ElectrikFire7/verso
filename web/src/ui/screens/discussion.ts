@@ -52,7 +52,7 @@ export function mount(root: HTMLElement, ctx: ScreenCtx): void {
     roster.update(s);
     word.update(s.word);
     setText(kicker, `Round ${s.round} of ${s.totalRounds}`);
-    fill(title, el("em", { text: "Discuss" }), " — then vote in secret");
+    fill(title, el("em", { text: "Discuss" }), "and then vote in secret");
 
     dossier.update(s);
     if (s.youAreEliminated) {

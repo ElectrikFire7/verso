@@ -105,12 +105,12 @@ export function mount(root: HTMLElement, ctx: ScreenCtx): void {
         countLine,
         imposters === 1
           ? "One of you was handed a different word. Nobody is told who."
-          : `${imposters} of you were handed the same different word. Nobody is told who — ` +
-            "not even each other.",
+          : `${imposters} of you were handed the same different word. Nobody is told who.` +
+            "Not even each other.",
       );
     }
     setText(wordText, s.word || "…");
-    setText(wordTitle, first ? "Your secret word" : `Your secret word — round ${n}`);
+    setText(wordTitle, first ? "Your secret word" : `Your secret word - round ${n}`);
     setText(clockTitle, first ? "First round starts in" : `Round ${n} starts in`);
     setText(
       freshNote,

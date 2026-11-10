@@ -212,7 +212,7 @@ export function mount(root: HTMLElement, ctx: ScreenCtx): void {
     setText(kicker, `Round ${s.round} of ${s.totalRounds} · turn ${s.turnIndex + 1} of ${s.turnOrder.length}`);
     fill(
       title,
-      iAmArtist ? el("em", { text: "Your turn — draw!" }) : el("em", { text: artistName }),
+      iAmArtist ? el("em", { text: "Your turn to draw!" }) : el("em", { text: artistName }),
       iAmArtist ? "" : " is drawing",
     );
 
@@ -258,7 +258,7 @@ export function mount(root: HTMLElement, ctx: ScreenCtx): void {
         fill(
           statusBody,
           el("p", { text: "Freehand clues only. No letters, numbers, arrows or symbols." }),
-          el("p", { class: "hint", text: "There is no eraser and no undo — every mark stays on the canvas." }),
+          el("p", { class: "hint", text: "There is no eraser and no undo!! Every mark stays on the canvas." }),
         );
       } else {
         const away = turnsAway(s);
